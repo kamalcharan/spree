@@ -1,6 +1,8 @@
 default_store = Spree::Store.default
 default_store.checkout_zone = Spree::Zone.find_by(name: 'North America')
 default_store.default_country = Spree::Country.default
+default_store.supported_currencies = 'CAD,USD,AUD'
+default_store.supported_currencies = 'en,fr'
 default_store.url = Rails.env.development? ? 'localhost:3000' : 'demo.spreecommerce.org'
 default_store.save!
 
@@ -10,6 +12,7 @@ eu_store.url = Rails.env.development? ? 'eu.lvh.me:3000' : 'demo-eu.spreecommerc
 eu_store.mail_from_address = 'eustore@example.com'
 eu_store.default_currency = 'EUR'
 eu_store.default_locale = 'de'
+eu_store.supported_locales = 'de,fr,es'
 eu_store.checkout_zone = Spree::Zone.find_by(name: 'EU_VAT')
 eu_store.default_country = Spree::Country.find_by(iso: 'DE')
 eu_store.save!
